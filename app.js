@@ -74,10 +74,11 @@ function InitializationGame()  // Initialize the game
     document.querySelector(`.player-0-panel`).classList.remove("winner");
     document.querySelector(`.player-1-panel`).classList.remove("winner");
     document.querySelector('.dice').style.display = 'none';
-    document.getElementById('name-0').textContent = 'PLAYER 1';
-    document.getElementById('name-1').textContent = 'PLAYER 2';
+    document.getElementById('name-0').textContent = 'Shaga';
+    document.getElementById('name-1').textContent = 'Shag';
     scores[0] = 0;
     scores[1] = 0;
+    gamePlaying = true;
 
 }
 
