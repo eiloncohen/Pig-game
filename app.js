@@ -117,7 +117,7 @@ function UpdateCurrentBox(SrcOfDice)  // add the random number from dice to the 
 
 function ifWin() // check if one of the player won the game
 {
-    if(scores[activePlayer] >= 20)
+    if(scores[activePlayer] >= 100)
     {
         document.querySelector(`.player-${activePlayer}-panel`).classList.add("winner");
         document.getElementById(`name-${activePlayer}`).textContent = 'WINNER!';
