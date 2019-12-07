@@ -74,12 +74,12 @@ function InitializationGame()  // Initialize the game
     document.querySelector(`.player-0-panel`).classList.remove("winner");
     document.querySelector(`.player-1-panel`).classList.remove("winner");
     document.querySelector('.dice').style.display = 'none';
-    document.getElementById('name-0').textContent = 'Shaga';
-    document.getElementById('name-1').textContent = 'Shag';
+    document.getElementById('name-0').textContent = 'Player1';
+    document.getElementById('name-1').textContent = 'Player2';
     scores[0] = 0;
     scores[1] = 0;
     gamePlaying = true;
-
+    roundScore = 0;
 }
 
 
@@ -117,12 +117,20 @@ function UpdateCurrentBox(SrcOfDice)  // add the random number from dice to the 
 
 function ifWin() // check if one of the player won the game
 {
-    if(scores[activePlayer] >= 100)
+    if(scores[activePlayer] >= 20)
     {
         document.querySelector(`.player-${activePlayer}-panel`).classList.add("winner");
         document.getElementById(`name-${activePlayer}`).textContent = 'WINNER!';
         alert(`game over! player number ${activePlayer+1} won! `);
         gamePlaying = false;
+       if(activePlayer == 0) // keep that the winner is start first in the next round
+       {
+           activePlayer = 1; 
+       }
+       else
+       {
+           activePlayer = 0;
+       }
     }
 }
 
